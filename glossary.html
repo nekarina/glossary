@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Глосарій служби підтримки: EN–UA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8f3f0;
+            --card: #fffdfb;
+            --ink: #3f0d1d;
+            --mute: #78636a;
+            --line: #d8c3b3;
+            --accent: #6d1025;
+            --accent-2: #d4af37;
+            --warn: #8c1c13;
+            color-scheme: light;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font: 400 17px/1.65 Inter,system-ui,sans-serif;
+        }
+
+        h1,
+        h2,
+        .en {
+            font-family: "Cormorant Garamond",serif;
+            letter-spacing: .3px;
+        }
+
+        .wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 20px 16px 40px
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.15;
+            margin: 0 0 6px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .sub {
+            color: var(--mute);
+            margin: 0 0 16px
+        }
+
+        .bar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: var(--bg);
+            padding: 10px 0 8px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .search {
+            display: flex;
+            gap: 8px
+        }
+
+        input[type=search] {
+            flex: 1;
+            min-width: 0;
+            font: inherit;
+            padding: 12px 14px;
+            border: 2px solid var(--ink);
+            border-radius: 6px;
+            background: #fff;
+            color: var(--ink)
+        }
+
+        button, select {
+            font: inherit;
+            color: var(--ink)
+        }
+
+        .btn {
+            padding: 10px 14px;
+            border: 2px solid var(--ink);
+            border-radius: 6px;
+            background: #fff;
+            cursor: pointer
+        }
+
+            .btn[aria-pressed=true],
+            .btn[aria-expanded=true] {
+                background: var(--accent);
+                color: #fff8e1;
+                border-color: var(--accent-2);
+            }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+            align-items: center
+        }
+
+        select {
+            padding: 8px 10px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: #fff;
+            max-width: 100%
+        }
+
+        .az {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px
+        }
+
+            .az button {
+                min-width: 32px;
+                padding: 4px 6px;
+                border: 1px solid var(--line);
+                border-radius: 4px;
+                background: #fff;
+                cursor: pointer
+            }
+
+                .az button[aria-pressed=true] {
+                    background: var(--accent-2);
+                    border-color: var(--accent);
+                    color: var(--accent);
+                    font-weight: 700;
+                }
+
+                .az button:disabled {
+                    color: #a6aebb;
+                    cursor: default;
+                    background: transparent;
+                    border-color: transparent
+                }
+
+        .count {
+            color: var(--mute);
+            margin: 14px 0 8px;
+            font-size: .92rem
+        }
+
+        .about {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 4px 16px 12px;
+            margin: 12px 0
+        }
+
+            .about h2 {
+                font-size: 1.1rem;
+                margin: 12px 0 4px
+            }
+
+            .about p, .about li {
+                margin: 4px 0;
+                max-width: 70ch
+            }
+
+        .t {
+            display: flex;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            margin: 0 0 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(63,13,29,.08);
+            transition: .2s ease;
+        }
+
+            .t:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px rgba(63,13,29,.15);
+            }
+
+        .stub {
+            flex: 0 0 74px;
+            background: linear-gradient( 180deg, #6d1025 0%, #4b0817 100% );
+            color: #fff;
+            padding: 12px 6px;
+            text-align: center;
+            border-right: 3px dashed #e6d6c8;
+            font-variant-numeric: tabular-nums;
+        }
+
+            .stub b {
+                display: block;
+                font-size: 1.25rem;
+                font-weight: 650;
+                line-height: 1.2
+            }
+
+            .stub span {
+                font-size: .72rem;
+                opacity: .75
+            }
+
+        .body {
+            padding: 12px 16px 14px;
+            min-width: 0
+        }
+
+        .en {
+            font-size: 1.25rem;
+            font-weight: 650;
+            margin: 0;
+            overflow-wrap: anywhere
+        }
+
+        .ab {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .ua {
+            font-size: 1.05rem;
+            margin: 0 0 4px;
+            overflow-wrap: anywhere
+        }
+
+        .meta {
+            color: var(--mute);
+            font-size: .88rem;
+            margin: 0 0 8px
+        }
+
+        .def {
+            margin: 0 0 6px;
+            max-width: 70ch
+        }
+
+
+        .ctx {
+            margin: 0 0 6px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-2);
+            font-style: italic;
+            max-width: 70ch;
+            color: #5a2a35;
+        }
+
+        .more {
+            font-size: .92rem;
+            margin: 2px 0 0
+        }
+
+        .dnu {
+            color: var(--warn)
+        }
+
+        mark {
+            background: #f4d97a;
+            color: #3f0d1d;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+
+        .empty {
+            background: #fff;
+            border: 1px dashed var(--mute);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center
+        }
+
+        footer {
+            color: var(--mute);
+            font-size: .85rem;
+            margin-top: 24px
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px
+        }
+
+        @media (max-width:520px) {
+            .stub {
+                flex-basis: 56px
+            }
+
+                .stub b {
+                    font-size: 1rem
+                }
+
+            h1 {
+                font-size: 1.35rem
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Глосарій служби підтримки</h1>
+  <p class="sub">Англійсько-українські терміни обробки ІТ-тікетів: <span id="total"></span> статей</p>
+
+  <div class="bar" role="search">
+    <div class="search">
+      <input type="search" id="q" placeholder="Пошук: термін, переклад, слово з дефініції" aria-label="Пошук у глосарії" autocomplete="off">
+      <button class="btn" id="aboutBtn" aria-expanded="false" aria-controls="about">Про проєкт</button>
+    </div>
+    <div class="row">
+      <label for="cat">Категорія</label>
+      <select id="cat"></select>
+      <button class="btn" id="mode" aria-pressed="false" title="Перемкнути алфавіт і сортування">Алфавіт: EN</button>
+      <button class="btn" id="reset">Скинути</button>
+    </div>
+    <div class="az" id="az" aria-label="Алфавітний покажчик"></div>
+  </div>
+
+  <section class="about" id="about" hidden>
+    <h2>Про проєкт</h2>
+    <p>Глосарій створено під час виробничої практики з прикладної лінгвістики. Він охоплює терміни, які трапляються під час роботи зі зверненнями (тікетами) в ІТ-компанії, що надає послуги іншим компаніям: реєстрація, маршрутизація, відповіді заявникам, пріоритети й SLA, доступи, інциденти, інфраструктура. Конфіденційні дані (імена, назви клієнтів, номери тікетів) не використовувалися, приклади вживання знеособлені.</p>
+    <h2>Як користуватися</h2>
+    <ul>
+      <li><b>Пошук</b> працює під час введення: за англійським терміном, українським відповідником, абревіатурою, синонімами та словами з дефініції.</li>
+      <li><b>Категорія</b> звужує перелік до одного напряму (відділу).</li>
+      <li><b>Алфавітний покажчик</b> показує статті на обрану літеру. Кнопка «Алфавіт» перемикає покажчик між англійським терміном (A–Z) і українським відповідником (А–Я).</li>
+    </ul>
+    <h2>Будова словникової статті</h2>
+    <ul>
+      <li>Номер у темній смузі ліворуч — порядковий номер статті.</li>
+      <li>Жирним подано англійський термін (поруч, якщо є, абревіатура), нижче — український відповідник.</li>
+      <li>У рядку під відповідником: частина мови (POS) і категорія.</li>
+      <li>Далі йдуть дефініція та приклад вживання (курсив).</li>
+      <li><b>Синоніми</b> — варіанти, які трапляються в роботі; <span class="dnu"><b>Не рекомендовано</b></span> — варіанти, яких слід уникати.</li>
+    </ul>
+  </section>
+
+  <p class="count" id="count" role="status" aria-live="polite"></p>
+  <main id="list"></main>
+  <footer>Виробнича практика з прикладної лінгвістики, 2026</footer>
+</div>
+
+<script id="data" type="application/json">[{"id":1,"en":"ticket","ua":"тікет","ab":"","pos":"Noun (іменник)","cat":"Життєвий цикл тікета","def":"Зареєстрований у системі запис про запит користувача чи проблему, що відстежується до її розв’язання.","ctx":"A new ticket was created after the user reported a login error.","syn":"request, case","dnu":"квиток"},{"id":2,"en":"ticketing system","ua":"система тікетів","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Програмний засіб для реєстрації, відстеження й опрацювання звернень користувачів.","ctx":"All incoming requests are registered in the ticketing system.","syn":"","dnu":"система квитків"},{"id":3,"en":"requester","ua":"заявник","ab":"","pos":"Noun (іменник)","cat":"Життєвий цикл тікета","def":"Особа, яка подала звернення до служби підтримки.","ctx":"The requester received a notification when the ticket was updated.","syn":"reporter, customer","dnu":""},{"id":4,"en":"assignee","ua":"виконавець","ab":"","pos":"Noun (іменник)","cat":"Життєвий цикл тікета","def":"Особа, якій призначено опрацювання тікета.","ctx":"The assignee must update the ticket within one business day.","syn":"owner","dnu":""},{"id":5,"en":"ticket queue","ua":"черга тікетів","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Упорядкований перелік необроблених тікетів, що очікують на опрацювання.","ctx":"The ticket remained in the general queue for two hours.","syn":"queue","dnu":""},{"id":6,"en":"ticket status","ua":"статус тікета","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Позначка поточного етапу опрацювання тікета в системі.","ctx":"The ticket status changed from open to pending.","syn":"state","dnu":"стан квитка"},{"id":7,"en":"pending","ua":"в очікуванні","ab":"","pos":"Adjective (прикметник)","cat":"Життєвий цикл тікета","def":"Про тікет, опрацювання якого призупинено до отримання відомостей чи дій від іншої сторони.","ctx":"The ticket is pending until the requester sends a screenshot.","syn":"on hold","dnu":""},{"id":8,"en":"closed","ua":"закритий","ab":"","pos":"Adjective (прикметник)","cat":"Життєвий цикл тікета","def":"Про тікет, опрацювання якого остаточно завершено й подальших дій не потребує.","ctx":"Closed tickets cannot be edited without reopening them.","syn":"completed","dnu":""},{"id":9,"en":"to assign","ua":"призначити","ab":"","pos":"Verb (дієслово)","cat":"Життєвий цикл тікета","def":"Визначити виконавця або команду, відповідальних за опрацювання тікета.","ctx":"The ticket was assigned to the infrastructure team.","syn":"allocate","dnu":""},{"id":10,"en":"to escalate","ua":"ескалювати","ab":"","pos":"Verb (дієслово)","cat":"Життєвий цикл тікета","def":"Передати тікет на вищий рівень підтримки чи керівнику через складність, пріоритет або ризик порушення SLA.","ctx":"The agent escalated the ticket to second-line support.","syn":"raise","dnu":""},{"id":11,"en":"to resolve","ua":"розв’язати","ab":"","pos":"Verb (дієслово)","cat":"Життєвий цикл тікета","def":"Усунути причину проблеми, описаної в тікеті, або виконати запит заявника.","ctx":"The team resolved the issue within the agreed time.","syn":"fix","dnu":""},{"id":12,"en":"to log","ua":"зареєструвати","ab":"","pos":"Verb (дієслово)","cat":"Життєвий цикл тікета","def":"Занести звернення до системи як окремий тікет.","ctx":"Every phone call must be logged as a ticket.","syn":"register, record","dnu":""},{"id":13,"en":"duplicate ticket","ua":"дублікат тікета","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Тікет, що повторює вже зареєстроване звернення з тієї самої проблеми.","ctx":"The duplicate ticket was merged with the original one.","syn":"duplicate","dnu":""},{"id":14,"en":"linked ticket","ua":"пов’язаний тікет","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Тікет, пов’язаний з іншим тікетом спільною причиною чи залежністю.","ctx":"Three linked tickets point to the same outage.","syn":"related ticket","dnu":""},{"id":15,"en":"resolution","ua":"рішення (розв’язання)","ab":"","pos":"Noun (іменник)","cat":"Життєвий цикл тікета","def":"Опис дій, які усунули проблему, зафіксований у тікеті перед його закриттям.","ctx":"The resolution was documented in the ticket.","syn":"solution","dnu":""},{"id":16,"en":"root cause","ua":"першопричина","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Основна причина виникнення проблеми, усунення якої запобігає її повторенню.","ctx":"The root cause of the outage was an expired certificate.","syn":"underlying cause","dnu":"корінна причина"},{"id":17,"en":"ticket template","ua":"шаблон тікета","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Життєвий цикл тікета","def":"Попередньо заповнена форма з обов’язковими полями для певного типу звернення.","ctx":"The ticket template contains fields for the error message and the affected system.","syn":"form template","dnu":""},{"id":18,"en":"priority","ua":"пріоритет","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Ступінь терміновості опрацювання тікета відносно інших.","ctx":"The ticket was given high priority because it blocked several users.","syn":"urgency level","dnu":""},{"id":19,"en":"severity","ua":"критичність","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Рівень впливу проблеми на роботу системи чи користувачів.","ctx":"Severity is determined by the number of affected users.","syn":"seriousness","dnu":""},{"id":20,"en":"urgency","ua":"терміновість","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Показник того, наскільки швидко потрібно розв’язати проблему.","ctx":"The urgency of the request was marked as low.","syn":"priority","dnu":""},{"id":21,"en":"impact","ua":"вплив","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Масштаб наслідків проблеми для користувачів чи бізнес-процесів.","ctx":"The impact of the outage was limited to one office.","syn":"effect","dnu":""},{"id":22,"en":"critical","ua":"критичний","ab":"","pos":"Adjective (прикметник)","cat":"Пріоритети та SLA","def":"Про найвищий рівень пріоритету, що вимагає негайної реакції.","ctx":"Critical tickets must be escalated immediately.","syn":"urgent","dnu":""},{"id":23,"en":"high priority","ua":"високий пріоритет","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Рівень пріоритету, за якого тікет опрацьовують поза чергою.","ctx":"High priority tickets are handled before all others.","syn":"","dnu":""},{"id":24,"en":"low priority","ua":"низький пріоритет","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Рівень пріоритету для запитів, які не впливають на роботу й можуть почекати.","ctx":"Cosmetic issues are usually marked as low priority.","syn":"","dnu":""},{"id":25,"en":"Service Level Agreement","ua":"угода про рівень обслуговування","ab":"SLA","pos":"Abbreviation / Acronym (абревіатура)","cat":"Пріоритети та SLA","def":"Документована домовленість, що визначає обсяг послуг і допустимі терміни реакції та розв’язання.","ctx":"The ticket must be answered within the time defined in the SLA.","syn":"service agreement","dnu":""},{"id":26,"en":"response time","ua":"час реагування","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Проміжок часу від реєстрації тікета до першої відповіді заявнику.","ctx":"The average response time is fifteen minutes.","syn":"reaction time","dnu":""},{"id":27,"en":"resolution time","ua":"час розв’язання","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Проміжок часу від реєстрації тікета до розв’язання проблеми.","ctx":"Resolution time depends on ticket priority.","syn":"time to resolve","dnu":""},{"id":28,"en":"due date","ua":"кінцевий термін","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Дата й час, до яких тікет має бути розв’язаний.","ctx":"The due date was extended at the requester’s request.","syn":"target date","dnu":""},{"id":29,"en":"deadline","ua":"граничний термін (дедлайн)","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Остаточний момент, після якого невиконання завдання вважається порушенням домовленості.","ctx":"The team missed the deadline because of missing information.","syn":"cut-off","dnu":""},{"id":30,"en":"SLA breach","ua":"порушення SLA","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Ситуація, коли тікет не опрацьовано в межах термінів, визначених угодою про рівень обслуговування.","ctx":"An SLA breach was recorded because the ticket stayed unassigned.","syn":"missed SLA","dnu":""},{"id":31,"en":"business hours","ua":"робочі години","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Час доби, упродовж якого служба підтримки доступна й відлік термінів SLA триває.","ctx":"Tickets submitted outside business hours are processed the next morning.","syn":"working hours","dnu":""},{"id":32,"en":"business day","ua":"робочий день","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"День, що враховується під час підрахунку термінів опрацювання тікета, за винятком вихідних і свят.","ctx":"The ticket will be handled within one business day.","syn":"working day","dnu":""},{"id":33,"en":"on-call","ua":"черговий","ab":"","pos":"Adjective (прикметник)","cat":"Пріоритети та SLA","def":"Про фахівця, який перебуває в режимі готовності реагувати на термінові інциденти поза робочим часом.","ctx":"The on-call engineer was notified about the outage.","syn":"standby","dnu":""},{"id":34,"en":"escalation path","ua":"шлях ескалації","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Визначена послідовність рівнів підтримки чи посадових осіб, до яких передають тікет у разі потреби.","ctx":"The escalation path starts with first-line support.","syn":"escalation chain","dnu":""},{"id":35,"en":"escalation level","ua":"рівень ескалації","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Рівень підтримки чи управління, на який передано тікет.","ctx":"The ticket reached the third escalation level.","syn":"","dnu":""},{"id":36,"en":"priority matrix","ua":"матриця пріоритетів","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Таблиця, що визначає пріоритет тікета на основі його впливу й терміновості.","ctx":"The priority matrix helps agents to assign the correct priority.","syn":"","dnu":""},{"id":37,"en":"blocker","ua":"блокувальна проблема","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Проблема, яка повністю унеможливлює роботу користувача чи подальше виконання завдання.","ctx":"The error was marked as a blocker for the release.","syn":"","dnu":""},{"id":38,"en":"workaround","ua":"тимчасове рішення","ab":"","pos":"Noun (іменник)","cat":"Пріоритети та SLA","def":"Обхідний спосіб подолати проблему, поки не усунуто її першопричину.","ctx":"A workaround was provided until the permanent fix is ready.","syn":"temporary fix","dnu":""},{"id":39,"en":"service level","ua":"рівень обслуговування","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Пріоритети та SLA","def":"Узгоджений показник якості та швидкості надання послуги підтримки.","ctx":"The service level for premium users is higher.","syn":"","dnu":""},{"id":40,"en":"Key Performance Indicator","ua":"ключовий показник ефективності","ab":"KPI","pos":"Abbreviation / Acronym (абревіатура)","cat":"Пріоритети та SLA","def":"Кількісний показник, що відображає ефективність роботи команди чи процесу.","ctx":"One of the support KPIs is the share of tickets resolved on the first contact.","syn":"performance metric","dnu":""},{"id":41,"en":"routing","ua":"маршрутизація","ab":"","pos":"Noun (іменник)","cat":"Маршрутизація та команди","def":"Визначення команди чи виконавця, до яких має потрапити тікет, і його передача.","ctx":"Correct routing reduces the time needed to resolve a ticket.","syn":"assignment","dnu":""},{"id":42,"en":"to route","ua":"спрямувати","ab":"","pos":"Verb (дієслово)","cat":"Маршрутизація та команди","def":"Скерувати тікет до відповідної команди за його змістом і категорією.","ctx":"The agent routed the ticket to the network team.","syn":"direct","dnu":""},{"id":43,"en":"support team","ua":"команда підтримки","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Група фахівців, що опрацьовує звернення користувачів.","ctx":"The support team works in two shifts.","syn":"","dnu":""},{"id":44,"en":"service desk","ua":"служба підтримки","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Єдина точка контакту між користувачами й ІТ-фахівцями для реєстрації та опрацювання запитів.","ctx":"The service desk is the first point of contact for all requests.","syn":"","dnu":""},{"id":45,"en":"help desk","ua":"довідкова служба","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Підрозділ, що надає користувачам консультації й допомогу в розв’язанні технічних проблем.","ctx":"Users can contact the help desk by email or chat.","syn":"support desk","dnu":""},{"id":46,"en":"first-line support","ua":"перша лінія підтримки","ab":"L1","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Рівень підтримки, що приймає звернення, виконує первинний розбір і розв’язує типові проблеми.","ctx":"First-line support resolved the password reset request.","syn":"L1 support","dnu":""},{"id":47,"en":"second-line support","ua":"друга лінія підтримки","ab":"L2","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Рівень підтримки, який опрацьовує складніші технічні проблеми, передані з першої лінії.","ctx":"The ticket was forwarded to second-line support for analysis.","syn":"L2 support","dnu":""},{"id":48,"en":"third-line support","ua":"третя лінія підтримки","ab":"L3","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Рівень підтримки, представлений вузькими спеціалістами й розробниками, що розв’язують найскладніші проблеми.","ctx":"Third-line support analyzed the source code.","syn":"L3 support","dnu":""},{"id":49,"en":"network team","ua":"мережева команда","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Група фахівців, відповідальна за роботу та налаштування мережевої інфраструктури.","ctx":"Third-line support analyzed the source code.","syn":"networking team","dnu":""},{"id":50,"en":"infrastructure team","ua":"команда інфраструктури","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Група фахівців, що забезпечує роботу серверів, сховищ даних і робочих середовищ.","ctx":"The infrastructure team restarted the server.","syn":"","dnu":""},{"id":51,"en":"security team","ua":"команда безпеки","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Група фахівців, що відповідає за захист систем і даних та опрацювання інцидентів безпеки.","ctx":"Suspicious login attempts are sent to the security team.","syn":"","dnu":""},{"id":52,"en":"development team","ua":"команда розробки","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Група фахівців, що створює та вдосконалює програмні продукти.","ctx":"The bug was passed on to the development team.","syn":"","dnu":""},{"id":53,"en":"DevOps team","ua":"команда DevOps","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Група фахівців, що автоматизує розгортання, супровід і моніторинг програмного забезпечення.","ctx":"The deployment failure was routed to the DevOps team.","syn":"dev team","dnu":""},{"id":54,"en":"IT operations","ua":"ІТ-операції","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Напрям діяльності, що забезпечує повсякденну роботу ІТ-систем і сервісів.","ctx":"IT operations monitor all production systems.","syn":"","dnu":""},{"id":55,"en":"team lead","ua":"керівник команди","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Фахівець, що координує роботу команди й вирішує складні чи спірні питання.","ctx":"The team lead approved the escalation.","syn":"team leader","dnu":""},{"id":56,"en":"Subject Matter Expert","ua":"фахівець із предметної галузі","ab":"SME","pos":"Abbreviation / Acronym (абревіатура)","cat":"Маршрутизація та команди","def":"Експерт із глибокими знаннями певної теми, до якого звертаються за консультацією.","ctx":"An SME confirmed the cause of the error.","syn":"domain expert","dnu":""},{"id":57,"en":"auto-assignment","ua":"автоматичне призначення","ab":"","pos":"Noun (іменник)","cat":"Маршрутизація та команди","def":"Призначення тікета виконавцю системою на основі заданих умов без участі людини.","ctx":"Auto-assignment distributes tickets evenly between agents.","syn":"automatic assignment","dnu":""},{"id":58,"en":"keyword","ua":"ключове слово","ab":"","pos":"Noun (іменник)","cat":"Маршрутизація та команди","def":"Слово чи словосполучення в тексті тікета, за яким визначають його тему й відповідальну команду.","ctx":"The keyword “firewall” indicates a network-related ticket.","syn":"","dnu":""},{"id":59,"en":"tag","ua":"тег","ab":"","pos":"Noun (іменник)","cat":"Маршрутизація та команди","def":"Мітка, яку додають до тікета для групування та пошуку.","ctx":"A tag was added to simplify further search.","syn":"label","dnu":""},{"id":60,"en":"to forward","ua":"переслати","ab":"","pos":"Verb (дієслово)","cat":"Маршрутизація та команди","def":"Надіслати тікет чи повідомлення іншій команді або особі для подальшого опрацювання.","ctx":"The email was forwarded to the security team.","syn":"pass on","dnu":""},{"id":61,"en":"ownership","ua":"відповідальність за тікет","ab":"","pos":"Noun (іменник)","cat":"Маршрутизація та команди","def":"Статус, за якого конкретний виконавець чи команда відповідає за тікет до його закриття.","ctx":"Ownership of the ticket stays with first-line support.","syn":"","dnu":""},{"id":62,"en":"point of contact","ua":"контактна особа","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Маршрутизація та команди","def":"Особа, до якої звертаються з питань певного тікета чи напряму.","ctx":"The team lead is the point of contact for all escalations.","syn":"contact person","dnu":""},{"id":63,"en":"incident","ua":"інцидент","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Непередбачена подія, що порушує або погіршує роботу ІТ-сервісу.","ctx":"The incident affected all users in the office.","syn":"","dnu":""},{"id":64,"en":"bug","ua":"помилка (баг)","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Недолік у програмному коді, що спричиняє неправильну роботу застосунку.","ctx":"The bug was reproduced on two devices.","syn":"","dnu":"глюк"},{"id":65,"en":"outage","ua":"відмова сервісу","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Повна недоступність сервісу чи системи на певний час.","ctx":"The outage lasted about thirty minutes.","syn":"service interruption","dnu":""},{"id":66,"en":"downtime","ua":"простій","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Період, упродовж якого система або сервіс недоступні.","ctx":"Planned downtime was announced two days in advance.","syn":"","dnu":""},{"id":67,"en":"performance issue","ua":"проблема продуктивності","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Ситуація, коли система працює повільніше за очікуваний рівень.","ctx":"Users reported a performance issue with the reporting tool.","syn":"slowness","dnu":""},{"id":68,"en":"error message","ua":"повідомлення про помилку","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Текст, який система показує користувачеві, коли виникає збій.","ctx":"The error message was included in the ticket.","syn":"","dnu":""},{"id":69,"en":"crash","ua":"аварійне завершення роботи","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Раптове припинення роботи програми.","ctx":"The application crash occurred after the update.","syn":"","dnu":""},{"id":70,"en":"connectivity issue","ua":"проблема зі з’єднанням","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Неможливість або нестабільність підключення до мережі чи сервісу.","ctx":"A connectivity issue prevented access to the portal.","syn":"connection problem","dnu":""},{"id":71,"en":"bug report","ua":"звіт про помилку","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Документ, що описує помилку, умови її виникнення та очікуваний результат.","ctx":"A detailed bug report speeds up the investigation.","syn":"defect report","dnu":""},{"id":72,"en":"feature request","ua":"запит на нову функцію","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Пропозиція користувача додати нову можливість до продукту.","ctx":"The feature request was forwarded to the product team.","syn":"enhancement request","dnu":""},{"id":73,"en":"known issue","ua":"відома проблема","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Проблема, яка вже задокументована й для якої існує пояснення чи тимчасове рішення.","ctx":"The problem is listed as a known issue in the knowledge base.","syn":"known error","dnu":""},{"id":74,"en":"recurring issue","ua":"повторювана проблема","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Проблема, яка виникає знову після її нібито розв’язання.","ctx":"A recurring issue requires root cause analysis.","syn":"repeated issue","dnu":""},{"id":75,"en":"major incident","ua":"серйозний інцидент","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Інцидент із надзвичайним впливом на бізнес, що потребує негайної координації.","ctx":"A major incident was declared after the database failure.","syn":"","dnu":""},{"id":76,"en":"data loss","ua":"втрата даних","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Незворотне зникнення або пошкодження інформації в системі.","ctx":"The user reported data loss after the synchronization failed.","syn":"","dnu":""},{"id":77,"en":"system failure","ua":"збій системи","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Неочікуване припинення правильної роботи системи.","ctx":"A system failure interrupted the work of the whole team.","syn":"","dnu":""},{"id":78,"en":"software update","ua":"оновлення програмного забезпечення","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Нова версія чи набір змін, що вдосконалюють програму або усувають її недоліки.","ctx":"The issue appeared after the latest software update.","syn":"","dnu":""},{"id":79,"en":"patch","ua":"патч","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Невелике оновлення, що усуває конкретну помилку чи вразливість.","ctx":"A security patch was installed on all servers.","syn":"fix","dnu":"латка"},{"id":80,"en":"rollback","ua":"відкат","ab":"","pos":"Noun (іменник)","cat":"Типи запитів та проблеми","def":"Повернення системи до попередньої стабільної версії після невдалого оновлення.","ctx":"The team performed a rollback after the failed deployment.","syn":"","dnu":""},{"id":81,"en":"maintenance window","ua":"вікно обслуговування","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Запланований період, коли дозволено виконувати технічні роботи, що можуть вплинути на доступність сервісу.","ctx":"The update was scheduled for the maintenance window.","syn":"","dnu":""},{"id":82,"en":"incident report","ua":"звіт про інцидент","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Документ, що описує перебіг, причини й наслідки інциденту та вжиті заходи.","ctx":"An incident report was shared with all stakeholders.","syn":"","dnu":""},{"id":83,"en":"steps to reproduce","ua":"кроки для відтворення","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Послідовність дій, що дає змогу повторно викликати описану проблему.","ctx":"The ticket included clear steps to reproduce the error.","syn":"reproduction steps","dnu":""},{"id":84,"en":"expected behavior","ua":"очікувана поведінка","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Те, як має працювати система за вимогами чи описом функції.","ctx":"The expected behavior is described in the user guide.","syn":"expected result","dnu":""},{"id":85,"en":"log file","ua":"файл журналу","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Типи запитів та проблеми","def":"Файл, у якому система автоматично записує події та помилки під час роботи.","ctx":"Please attach the log file to the ticket.","syn":"log","dnu":""},{"id":86,"en":"access request","ua":"запит на доступ","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Звернення з проханням надати або змінити права користувача на ресурс чи систему.","ctx":"The access request was sent to the manager for approval.","syn":"","dnu":""},{"id":87,"en":"user account","ua":"обліковий запис користувача","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Набір даних, що ідентифікує користувача в системі та визначає його права.","ctx":"The user account was blocked after several failed attempts.","syn":"account","dnu":""},{"id":88,"en":"password reset","ua":"скидання пароля","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Процедура відновлення доступу шляхом встановлення нового пароля.","ctx":"A password reset link was sent to the user.","syn":"","dnu":""},{"id":89,"en":"login","ua":"вхід до системи","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Процес ідентифікації користувача для отримання доступу до облікового запису.","ctx":"The login failed because of an incorrect password.","syn":"sign-in","dnu":""},{"id":90,"en":"authentication","ua":"автентифікація","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Перевірка того, що користувач є тим, ким себе називає.","ctx":"Authentication failed due to an expired token.","syn":"","dnu":""},{"id":91,"en":"Multi-Factor Authentication","ua":"багатофакторна автентифікація","ab":"MFA","pos":"Abbreviation / Acronym (абревіатура)","cat":"Доступи та облікові записи","def":"Спосіб підтвердження особи за допомогою кількох незалежних чинників, наприклад пароля й коду.","ctx":"MFA is required for access to the corporate email.","syn":"two-factor authentication","dnu":""},{"id":92,"en":"Single Sign-On","ua":"єдиний вхід","ab":"SSO","pos":"Abbreviation / Acronym (абревіатура)","cat":"Доступи та облікові записи","def":"Механізм, що дає змогу отримати доступ до кількох систем після одноразового входу.","ctx":"SSO allows employees to use one account for all services.","syn":"","dnu":""},{"id":93,"en":"authorization","ua":"авторизація","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Надання автентифікованому користувачеві прав на певні дії чи ресурси.","ctx":"Authorization depends on the user’s role.","syn":"","dnu":""},{"id":94,"en":"permission","ua":"дозвіл","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Право виконувати певну дію або отримувати доступ до певного ресурсу.","ctx":"The user does not have permission to edit this folder.","syn":"access right","dnu":""},{"id":95,"en":"access rights","ua":"права доступу","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Сукупність дозволів, що визначають, які ресурси та дії доступні користувачеві.","ctx":"Access rights were updated after the role change.","syn":"permission","dnu":""},{"id":96,"en":"Virtual Private Network","ua":"віртуальна приватна мережа","ab":"VPN","pos":"Abbreviation / Acronym (абревіатура)","cat":"Доступи та облікові записи","def":"Захищене з’єднання, що забезпечує безпечний віддалений доступ до внутрішніх ресурсів через інтернет.","ctx":"The user cannot connect to the VPN from home.","syn":"","dnu":""},{"id":97,"en":"credentials","ua":"облікові дані","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Відомості, як-от ім’я користувача й пароль, що підтверджують право на доступ.","ctx":"Never share your credentials with other people.","syn":"login details","dnu":""},{"id":98,"en":"account lockout","ua":"блокування облікового запису","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Тимчасове або постійне припинення доступу до облікового запису, зазвичай після кількох невдалих спроб входу.","ctx":"The account lockout occurred after five incorrect attempts.","syn":"","dnu":""},{"id":99,"en":"provisioning","ua":"надання доступу","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Налаштування облікових записів, прав і ресурсів для нового користувача чи сервісу.","ctx":"Account provisioning is done on the first working day.","syn":"","dnu":""},{"id":100,"en":"deprovisioning","ua":"відкликання доступу","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Вилучення облікових записів і прав користувача, наприклад після завершення співпраці.","ctx":"Deprovisioning must be completed on the last working day.","syn":"","dnu":""},{"id":101,"en":"access approval","ua":"погодження доступу","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Підтвердження уповноваженою особою права користувача на запитуваний доступ.","ctx":"Access approval is required for administrator rights.","syn":"","dnu":""},{"id":102,"en":"approver","ua":"погоджувач","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Особа, уповноважена підтверджувати запити на доступ чи зміни.","ctx":"The approver rejected the request due to missing justification.","syn":"","dnu":""},{"id":103,"en":"administrator rights","ua":"права адміністратора","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Розширені повноваження, що дозволяють змінювати налаштування системи та керувати користувачами.","ctx":"Administrator rights were granted for a limited period.","syn":"admin rights","dnu":""},{"id":104,"en":"guest account","ua":"гостьовий обліковий запис","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Обліковий запис з обмеженими правами для тимчасового доступу сторонніх осіб.","ctx":"A guest account was created for the external auditor.","syn":"","dnu":""},{"id":105,"en":"shared mailbox","ua":"спільна поштова скринька","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Поштова скринька, до якої мають доступ кілька користувачів.","ctx":"Customer emails are collected in a shared mailbox.","syn":"","dnu":""},{"id":106,"en":"software license","ua":"ліцензія на програмне забезпечення","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Дозвіл правовласника на використання програми на певних умовах.","ctx":"The software license expired last week.","syn":"","dnu":""},{"id":107,"en":"account deactivation","ua":"деактивація облікового запису","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Доступи та облікові записи","def":"Вимкнення облікового запису без його остаточного видалення.","ctx":"Account deactivation was requested by the manager.","syn":"account suspension","dnu":""},{"id":108,"en":"onboarding","ua":"адаптація нового співробітника (онбординг)","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Процес введення нового співробітника в робочі процеси, системи й корпоративну культуру.","ctx":"New employees receive access to the systems during onboarding.","syn":"","dnu":""},{"id":109,"en":"offboarding","ua":"вихід співробітника (оффбординг)","ab":"","pos":"Noun (іменник)","cat":"Доступи та облікові записи","def":"Процес завершення співпраці зі співробітником, що охоплює відкликання доступів і повернення обладнання.","ctx":"During offboarding, all accounts are deactivated.","syn":"","dnu":""},{"id":110,"en":"acknowledgment","ua":"підтвердження отримання","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Повідомлення, що сповіщає заявника про отримання й реєстрацію його звернення.","ctx":"An automatic acknowledgment is sent right after the ticket is created.","syn":"","dnu":""},{"id":111,"en":"status update","ua":"оновлення статусу","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Комунікація із заявником","def":"Повідомлення заявнику про поточний стан опрацювання тікета.","ctx":"The agent sent a status update every day.","syn":"progress update","dnu":""},{"id":112,"en":"clarification request","ua":"запит на уточнення","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Комунікація із заявником","def":"Звернення до заявника з проханням надати відомості, яких бракує для опрацювання тікета.","ctx":"A clarification request was sent because the error message was missing.","syn":"request for information","dnu":""},{"id":113,"en":"follow-up","ua":"повторне звернення","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Повторне повідомлення, спрямоване на отримання відповіді чи уточнення стану.","ctx":"A follow-up was sent after two days without a reply.","syn":"","dnu":""},{"id":114,"en":"internal note","ua":"внутрішня примітка","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Комунікація із заявником","def":"Коментар до тікета, видимий лише співробітникам і прихований від заявника.","ctx":"The routing reason was added as an internal note.","syn":"private comment","dnu":""},{"id":115,"en":"public comment","ua":"публічний коментар","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Комунікація із заявником","def":"Коментар до тікета, який бачить заявник.","ctx":"The agent added a public comment with instructions.","syn":"","dnu":""},{"id":116,"en":"confirmation","ua":"підтвердження","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Повідомлення про те, що дію виконано або дані отримано.","ctx":"Please send a confirmation that the issue is resolved.","syn":"","dnu":""},{"id":117,"en":"feedback","ua":"зворотний зв’язок","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Відгуки й зауваження користувачів щодо якості підтримки.","ctx":"Feedback from users helps to improve the service.","syn":"","dnu":""},{"id":118,"en":"email thread","ua":"ланцюжок листів","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Комунікація із заявником","def":"Послідовність пов’язаних електронних листів на одну тему.","ctx":"The whole email thread was attached to the ticket.","syn":"","dnu":""},{"id":119,"en":"troubleshooting","ua":"усунення несправностей","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Систематичний процес пошуку причини проблеми та її усунення.","ctx":"Troubleshooting began with checking the network connection.","syn":"problem solving","dnu":""},{"id":120,"en":"attachment","ua":"вкладення","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Файл, прикріплений до тікета чи листа, наприклад знімок екрана.","ctx":"The attachment contained a screenshot of the error.","syn":"","dnu":""},{"id":121,"en":"mention","ua":"згадка","ab":"","pos":"Noun (іменник)","cat":"Комунікація із заявником","def":"Позначка користувача в коментарі, що надсилає йому сповіщення.","ctx":"A colleague was added through a mention in the comment.","syn":"","dnu":""},{"id":122,"en":"server","ua":"сервер","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Комп’ютер або програма, що надає ресурси й послуги іншим пристроям у мережі.","ctx":"The server was restarted to restore access.","syn":"","dnu":""},{"id":123,"en":"firewall","ua":"брандмауер","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Засіб захисту, що фільтрує мережевий трафік за заданими правилами.","ctx":"The firewall blocked the connection to the external service.","syn":"","dnu":"файєрвол"},{"id":124,"en":"router","ua":"маршрутизатор","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Мережевий пристрій, що спрямовує пакети даних між мережами.","ctx":"The router was replaced after a hardware failure.","syn":"","dnu":""},{"id":125,"en":"cloud service","ua":"хмарний сервіс","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"ІТ-інфраструктура та технології","def":"Ресурс чи послуга, що надаються через інтернет від постачальника хмарних технологій.","ctx":"The cloud service was unavailable for several users.","syn":"","dnu":""},{"id":126,"en":"database","ua":"база даних","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Упорядкована сукупність даних, що зберігаються й обробляються за допомогою спеціального програмного забезпечення.","ctx":"The query to the database timed out.","syn":"","dnu":""},{"id":127,"en":"application","ua":"застосунок","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Програма, призначена для виконання конкретних завдань користувача.","ctx":"The application does not open after the update.","syn":"app","dnu":""},{"id":128,"en":"Application Programming Interface","ua":"прикладний програмний інтерфейс","ab":"API","pos":"Abbreviation / Acronym (абревіатура)","cat":"ІТ-інфраструктура та технології","def":"Набір правил і засобів, за допомогою яких програми обмінюються даними.","ctx":"The API returned an authorization error.","syn":"","dnu":""},{"id":129,"en":"backend","ua":"серверна частина (бекенд)","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Частина програмного продукту, що працює на сервері й відповідає за обробку даних.","ctx":"The error originates in the backend.","syn":"server side","dnu":""},{"id":130,"en":"frontend","ua":"клієнтська частина (фронтенд)","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Частина програмного продукту, яку бачить користувач і з якою взаємодіє.","ctx":"The display problem is related to the frontend.","syn":"client side","dnu":""},{"id":131,"en":"workstation","ua":"робоча станція","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Комп’ютер, на якому співробітник виконує службові завдання.","ctx":"The workstation was replaced after the hardware failure.","syn":"","dnu":""},{"id":132,"en":"endpoint","ua":"кінцевий пристрій","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Пристрій користувача, підключений до корпоративної мережі, наприклад ноутбук.","ctx":"Security software is installed on every endpoint.","syn":"","dnu":""},{"id":133,"en":"operating system","ua":"операційна система","ab":"OS","pos":"Abbreviation / Acronym (абревіатура)","cat":"ІТ-інфраструктура та технології","def":"Базове програмне забезпечення, що керує ресурсами комп’ютера й забезпечує роботу програм.","ctx":"The application requires the latest version of the operating system.","syn":"","dnu":""},{"id":134,"en":"software","ua":"програмне забезпечення","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Сукупність програм і даних, що забезпечують роботу комп’ютера й виконання завдань користувача.","ctx":"The software was installed on all computers.","syn":"","dnu":"софт"},{"id":135,"en":"hardware","ua":"апаратне забезпечення","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Фізичні компоненти комп’ютера та пристроїв, наприклад процесор чи монітор.","ctx":"A hardware failure caused the downtime.","syn":"","dnu":"залізо"},{"id":136,"en":"cache","ua":"кеш","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Тимчасове сховище даних, що пришвидшує повторний доступ до них.","ctx":"Clearing the browser cache solved the problem.","syn":"","dnu":""},{"id":137,"en":"bandwidth","ua":"пропускна здатність","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Максимальний обсяг даних, який мережа може передати за одиницю часу.","ctx":"Low bandwidth slowed down the video calls.","syn":"","dnu":""},{"id":138,"en":"latency","ua":"затримка","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Час, що минає між надсиланням запиту й отриманням відповіді в мережі.","ctx":"High latency affects remote desktop sessions.","syn":"delay","dnu":""},{"id":139,"en":"IP address","ua":"IP-адреса","ab":"IP = Internet Protocol","pos":"Abbreviation / Acronym (абревіатура)","cat":"ІТ-інфраструктура та технології","def":"Унікальний числовий ідентифікатор пристрою в мережі.","ctx":"The user’s IP address was blocked by the firewall.","syn":"","dnu":""},{"id":140,"en":"Domain Name System","ua":"система доменних імен","ab":"DNS","pos":"Abbreviation / Acronym (абревіатура)","cat":"ІТ-інфраструктура та технології","def":"Служба, що перетворює доменні імена вебсайтів на IP-адреси.","ctx":"The site is unavailable because of a DNS error.","syn":"","dnu":""},{"id":141,"en":"virtual machine","ua":"віртуальна машина","ab":"VM","pos":"Abbreviation / Acronym (абревіатура)","cat":"ІТ-інфраструктура та технології","def":"Програмна емуляція комп’ютера, що працює всередині фізичного пристрою.","ctx":"The virtual machine was restarted after freezing.","syn":"","dnu":""},{"id":142,"en":"backup","ua":"резервна копія","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Копія даних, створена для їх відновлення в разі втрати чи пошкодження.","ctx":"The data were restored from the latest backup.","syn":"","dnu":"бекап"},{"id":143,"en":"monitoring","ua":"моніторинг","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Безперервне відстеження стану систем і сервісів для своєчасного виявлення збоїв.","ctx":"Monitoring detected an increase in the response time.","syn":"","dnu":""},{"id":144,"en":"alert","ua":"системне оповіщення","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Автоматичне повідомлення системи моніторингу про відхилення від норми.","ctx":"An alert was triggered when the disk space was almost full.","syn":"warning","dnu":""},{"id":145,"en":"deployment","ua":"розгортання","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Процес встановлення й запуску нової версії програмного продукту в робочому середовищі.","ctx":"The issue appeared after the deployment.","syn":"release","dnu":""},{"id":146,"en":"configuration","ua":"конфігурація","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"Набір налаштувань, що визначає роботу системи чи програми.","ctx":"An incorrect configuration caused the connection error.","syn":"settings","dnu":""},{"id":147,"en":"integration","ua":"інтеграція","ab":"","pos":"Noun (іменник)","cat":"ІТ-інфраструктура та технології","def":"З’єднання різних систем, що забезпечує обмін даними між ними.","ctx":"The integration between the two systems stopped working.","syn":"","dnu":""},{"id":148,"en":"security incident","ua":"інцидент безпеки","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Подія, що порушила або могла порушити конфіденційність, цілісність чи доступність даних і систем.","ctx":"A security incident was reported after several failed login attempts.","syn":"","dnu":""},{"id":149,"en":"vulnerability","ua":"вразливість","ab":"","pos":"Noun (іменник)","cat":"Безпека та захист даних","def":"Слабке місце в програмі чи системі, яким можна скористатися для порушення її безпеки.","ctx":"The vulnerability was fixed with the latest security patch.","syn":"weakness","dnu":""},{"id":150,"en":"phishing","ua":"фішинг","ab":"","pos":"Noun (іменник)","cat":"Безпека та захист даних","def":"Шахрайський спосіб виманювання конфіденційних даних через підроблені листи чи вебсторінки.","ctx":"The user received a phishing email and reported it to the security team.","syn":"","dnu":""},{"id":151,"en":"malware","ua":"шкідливе програмне забезпечення","ab":"","pos":"Noun (іменник)","cat":"Безпека та захист даних","def":"Програма, створена для пошкодження систем або викрадення даних.","ctx":"Malware was detected on the workstation.","syn":"malicious software","dnu":""},{"id":152,"en":"data breach","ua":"витік даних","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Несанкціоноване розкриття або викрадення конфіденційної інформації.","ctx":"The data breach was reported to the security team immediately.","syn":"data leak","dnu":""},{"id":153,"en":"unauthorized access","ua":"несанкціонований доступ","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Отримання доступу до системи чи даних без дозволу власника.","ctx":"The log shows an unauthorized access attempt.","syn":"","dnu":""},{"id":154,"en":"encryption","ua":"шифрування","ab":"","pos":"Noun (іменник)","cat":"Безпека та захист даних","def":"Перетворення даних у форму, що не піддається прочитанню без спеціального ключа.","ctx":"Encryption protects data during transfer.","syn":"","dnu":""},{"id":155,"en":"antivirus","ua":"антивірус","ab":"","pos":"Noun (іменник)","cat":"Безпека та захист даних","def":"Програма, що виявляє й видаляє шкідливе програмне забезпечення.","ctx":"The antivirus blocked a suspicious file.","syn":"","dnu":""},{"id":156,"en":"suspicious activity","ua":"підозріла активність","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Дії в системі, що відхиляються від звичної поведінки користувача й можуть вказувати на загрозу.","ctx":"Suspicious activity was detected on the user account.","syn":"","dnu":""},{"id":157,"en":"spam","ua":"спам","ab":"","pos":"Noun (іменник)","cat":"Безпека та захист даних","def":"Небажані масові повідомлення, що надходять без згоди одержувача.","ctx":"Spam messages were filtered automatically.","syn":"junk email","dnu":""},{"id":158,"en":"data privacy","ua":"конфіденційність даних","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Право на контроль над тим, як збирають, зберігають і використовують відомості про особу.","ctx":"Data privacy rules limit who can view the ticket.","syn":"","dnu":""},{"id":159,"en":"confidential information","ua":"конфіденційна інформація","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Відомості, доступ до яких обмежений і які не можна розголошувати без дозволу.","ctx":"Confidential information must not be sent in a public comment.","syn":"sensitive information","dnu":""},{"id":160,"en":"personal data","ua":"персональні дані","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Відомості, за якими можна ідентифікувати конкретну особу.","ctx":"Personal data should be removed from the ticket description.","syn":"","dnu":""},{"id":161,"en":"security policy","ua":"політика безпеки","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Безпека та захист даних","def":"Документ, що визначає правила захисту інформації та поведінки користувачів у системі.","ctx":"The security policy prohibits sharing passwords.","syn":"","dnu":""},{"id":162,"en":"uptime","ua":"час безвідмовної роботи","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Відсоток або тривалість часу, упродовж якого система працює без збоїв.","ctx":"The service uptime was 43 days last month.","syn":"","dnu":""},{"id":163,"en":"ticket volume","ua":"обсяг тікетів","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Моніторинг, метрики та звітність","def":"Кількість тікетів, зареєстрованих за певний період.","ctx":"Ticket volume increased after the system update.","syn":"number of tickets","dnu":""},{"id":164,"en":"dashboard","ua":"панель показників (дашборд)","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Візуальне подання ключових даних і метрик в одному інтерфейсі.","ctx":"The dashboard shows the number of open tickets by team.","syn":"","dnu":""},{"id":165,"en":"report","ua":"звіт","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Структурований виклад даних і висновків про виконану роботу чи стан системи.","ctx":"The monthly report includes ticket statistics.","syn":"","dnu":""},{"id":166,"en":"weekly report","ua":"тижневий звіт","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Моніторинг, метрики та звітність","def":"Звіт про результати роботи за тиждень.","ctx":"The weekly report was sent to the team lead on Friday.","syn":"","dnu":""},{"id":167,"en":"SLA compliance","ua":"дотримання SLA","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Моніторинг, метрики та звітність","def":"Частка тікетів, опрацьованих у межах термінів, визначених SLA.","ctx":"SLA compliance remained above ninety-five percent.","syn":"","dnu":""},{"id":168,"en":"peak load","ua":"пікове навантаження","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Моніторинг, метрики та звітність","def":"Період найбільшої кількості звернень чи запитів до системи.","ctx":"Peak load occurs on Monday mornings.","syn":"","dnu":""},{"id":169,"en":"workload","ua":"робоче навантаження","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Обсяг завдань, що припадає на фахівця чи команду.","ctx":"Auto-assignment helps to balance the workload.","syn":"","dnu":""},{"id":170,"en":"threshold","ua":"порогове значення","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Межа показника, перевищення якої запускає сповіщення чи певну дію.","ctx":"An alert is sent when the threshold is exceeded.","syn":"limit","dnu":""},{"id":171,"en":"metric","ua":"показник","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Кількісна характеристика, за якою оцінюють стан системи чи ефективність процесу.","ctx":"Response time is the main support metric.","syn":"measure","dnu":""},{"id":172,"en":"audit","ua":"аудит","ab":"","pos":"Noun (іменник)","cat":"Моніторинг, метрики та звітність","def":"Систематична перевірка процесів і даних на відповідність встановленим вимогам.","ctx":"An external audit checked the ticket handling process.","syn":"review","dnu":""},{"id":173,"en":"test environment","ua":"тестове середовище","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Зміни, релізи та середовища","def":"Окреме середовище для перевірки змін перед їх запуском у роботу.","ctx":"The fix was checked in the test environment.","syn":"","dnu":""},{"id":174,"en":"production environment","ua":"робоче середовище","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Зміни, релізи та середовища","def":"Середовище, у якому система працює для реальних користувачів.","ctx":"The error occurs only in the production environment.","syn":"live environment","dnu":""},{"id":175,"en":"staging environment","ua":"проміжне середовище","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Зміни, релізи та середовища","def":"Середовище, що максимально відтворює робоче й використовується для перевірки перед релізом.","ctx":"The update was tested in the staging environment.","syn":"","dnu":""},{"id":176,"en":"upgrade","ua":"оновлення до нової версії","ab":"","pos":"Noun (іменник)","cat":"Зміни, релізи та середовища","def":"Перехід на новішу версію системи чи компонента з розширеними можливостями.","ctx":"The server upgrade is planned for the weekend.","syn":"","dnu":"апгрейд"},{"id":177,"en":"migration","ua":"міграція","ab":"","pos":"Noun (іменник)","cat":"Зміни, релізи та середовища","def":"Перенесення даних, застосунків чи сервісів в інше середовище або систему.","ctx":"Data migration to the cloud was completed successfully.","syn":"","dnu":""},{"id":178,"en":"compatibility","ua":"сумісність","ab":"","pos":"Noun (іменник)","cat":"Зміни, релізи та середовища","def":"Здатність програм чи пристроїв працювати разом без конфліктів.","ctx":"The error is caused by a compatibility issue with the browser.","syn":"","dnu":""},{"id":179,"en":"dependency","ua":"залежність","ab":"","pos":"Noun (іменник)","cat":"Зміни, релізи та середовища","def":"Зв’язок, за якого працездатність одного компонента залежить від іншого.","ctx":"The failure was caused by an external dependency.","syn":"","dnu":""},{"id":180,"en":"outsourcing","ua":"аутсорсинг","ab":"","pos":"Noun (іменник)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Передача певних бізнес-функцій чи завдань зовнішній компанії.","ctx":"The company provides IT outsourcing services.","syn":"","dnu":""},{"id":181,"en":"service provider","ua":"постачальник послуг","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Компанія, що надає ІТ-послуги іншим організаціям.","ctx":"The service provider guarantees round-the-clock support.","syn":"vendor","dnu":""},{"id":182,"en":"scope of work","ua":"обсяг робіт","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Перелік завдань, які виконавець зобов’язаний виконати за проєктом.","ctx":"#REF!","syn":"","dnu":""},{"id":183,"en":"project manager","ua":"менеджер проєкту","ab":"PM","pos":"Abbreviation / Acronym (абревіатура)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Фахівець, що планує, координує та контролює виконання проєкту.","ctx":"The scope of work was agreed before the project started.","syn":"","dnu":""},{"id":184,"en":"account manager","ua":"менеджер із роботи з клієнтами","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Фахівець, що підтримує постійні відносини із замовниками та відповідає за їхнє задоволення.","ctx":"The account manager contacted the client about the delay.","syn":"","dnu":""},{"id":185,"en":"Non-Disclosure Agreement","ua":"угода про нерозголошення","ab":"NDA","pos":"Abbreviation / Acronym (абревіатура)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Правова домовленість, за якою сторони зобов’язуються не розкривати конфіденційну інформацію.","ctx":"Employees sign an NDA before they get access to client data.","syn":"confidentiality agreement","dnu":""},{"id":186,"en":"contract","ua":"договір","ab":"","pos":"Noun (іменник)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Письмова домовленість між сторонами про права, обов’язки й умови співпраці.","ctx":"The contract defines the terms of support.","syn":"agreement","dnu":""},{"id":187,"en":"invoice","ua":"рахунок-фактура","ab":"","pos":"Noun (іменник)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Документ із переліком наданих послуг і сумою, яку замовник має сплатити.","ctx":"The invoice was sent at the end of the month.","syn":"bill","dnu":""},{"id":188,"en":"billing","ua":"виставлення рахунків","ab":"","pos":"Noun (іменник)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Процес нарахування й оформлення платежів за надані послуги.","ctx":"Billing is based on the hours worked.","syn":"","dnu":""},{"id":189,"en":"remote support","ua":"віддалена підтримка","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Технічна допомога, що надається дистанційно через мережу.","ctx":"Most requests are solved with remote support.","syn":"","dnu":""},{"id":190,"en":"dedicated team","ua":"виділена команда","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Аутсорсинг та взаємодія з клієнтами","def":"Група фахівців, яка працює виключно над проєктами одного клієнта.","ctx":"The client works with a dedicated team.","syn":"","dnu":""},{"id":191,"en":"Standard Operating Procedure","ua":"стандартна операційна процедура","ab":"SOP","pos":"Abbreviation / Acronym (абревіатура)","cat":"Процеси та методології","def":"Затверджена інструкція, що описує порядок виконання типових дій.","ctx":"An SOP describes how to route tickets correctly.","syn":"","dnu":""},{"id":192,"en":"process improvement","ua":"вдосконалення процесу","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Процеси та методології","def":"Системні зміни, що роблять робочий процес швидшим і якіснішим.","ctx":"Process improvement reduced the time of ticket routing.","syn":"","dnu":""},{"id":193,"en":"workflow","ua":"робочий процес","ab":"","pos":"Noun (іменник)","cat":"Процеси та методології","def":"Послідовність кроків, яка визначає порядок виконання завдання між учасниками.","ctx":"The workflow defines who receives the ticket after triage.","syn":"process flow","dnu":""},{"id":194,"en":"verification","ua":"верифікація","ab":"","pos":"Noun (іменник)","cat":"Тестування та якість","def":"Перевірка відповідності результату заданим вимогам.","ctx":"Verification of the fix is done by the QA team.","syn":"","dnu":""},{"id":195,"en":"validation","ua":"валідація","ab":"","pos":"Noun (іменник)","cat":"Тестування та якість","def":"Підтвердження того, що продукт задовольняє потреби користувача.","ctx":"Validation showed that the new feature works as expected.","syn":"","dnu":""},{"id":196,"en":"mandatory field","ua":"обов’язкове поле","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Поля та елементи тікета","def":"Поле форми, яке необхідно заповнити для створення тікета.","ctx":"The description is a mandatory field.","syn":"required field","dnu":""},{"id":197,"en":"affected system","ua":"уражена система","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Поля та елементи тікета","def":"Система чи сервіс, на роботу якого вплинула описана проблема.","ctx":"The affected system was the corporate email.","syn":"","dnu":""},{"id":198,"en":"affected user","ua":"уражений користувач","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Поля та елементи тікета","def":"Користувач, якого стосується проблема й чия робота через неї порушена.","ctx":"The number of affected users determines the severity.","syn":"","dnu":""},{"id":199,"en":"time stamp","ua":"часова мітка","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Поля та елементи тікета","def":"Запис дати й часу, коли сталася певна подія в системі.","ctx":"Each comment has a time stamp.","syn":"","dnu":""},{"id":200,"en":"device model","ua":"модель пристрою","ab":"","pos":"Noun Phrase (іменникова сполука)","cat":"Поля та елементи тікета","def":"Назва й позначення виробника для конкретного пристрою.","ctx":"The device model helps to find a suitable solution.","syn":"","dnu":""}]</script>
+<script>
+(function(){
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var st = {q:'', cat:'', letter:'', ua:false};
+  var $ = function(id){return document.getElementById(id);};
+  var esc = function(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  var re = function(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');};
+  var key = function(e){return st.ua ? e.ua : e.en;};
+  var letterOf = function(e){var c = key(e).replace(/^[^A-Za-zА-Яа-яІіЇїЄєҐґ]+/,'').charAt(0).toUpperCase(); return (!c || (st.ua && /[A-Z]/.test(c))) ? '#' : c;};
+  var lang = function(){return st.ua ? 'uk' : 'en';};
+
+  $('total').textContent = D.length;
+  var cats = Array.from(new Set(D.map(function(e){return e.cat;}))).sort(function(a,b){return a.localeCompare(b,'uk');});
+  $('cat').innerHTML = '<option value="">Усі категорії</option>' + cats.map(function(c){
+    return '<option value="'+esc(c)+'">'+esc(c)+' ('+D.filter(function(e){return e.cat===c;}).length+')</option>';}).join('');
+
+  function hay(e){return (e.en+' '+e.ua+' '+e.ab+' '+e.syn+' '+e.def).toLowerCase();}
+  D.forEach(function(e){e._h = hay(e);});
+
+  function pool(){
+    var q = st.q.trim().toLowerCase();
+    return D.filter(function(e){
+      return (!st.cat || e.cat===st.cat) && (!q || e._h.indexOf(q)>-1);
+    });
+  }
+  function hl(text){
+    var q = st.q.trim(); text = String(text);
+    if(!q) return esc(text);
+    var r = new RegExp(re(q),'gi'), out = '', last = 0, m;
+    while((m = r.exec(text))){
+      out += esc(text.slice(last,m.index)) + '<mark>' + esc(m[0]) + '</mark>';
+      last = m.index + m[0].length;
+      if(!m[0].length) r.lastIndex++;
+    }
+    return out + esc(text.slice(last));
+  }
+  function render(){
+    var p = pool();
+    var present = {};
+    p.forEach(function(e){present[letterOf(e)] = true;});
+    var all = Array.from(new Set(D.map(letterOf))).sort(function(a,b){return a.localeCompare(b,lang());});
+    if(st.letter && !present[st.letter]) st.letter = '';
+    $('az').innerHTML = all.map(function(l){
+      return '<button type="button" data-l="'+esc(l)+'" aria-pressed="'+(st.letter===l)+'"'+(present[l]?'':' disabled')+'>'+esc(l)+'</button>';}).join('');
+    var res = st.letter ? p.filter(function(e){return letterOf(e)===st.letter;}) : p;
+    res = res.slice().sort(function(a,b){return key(a).localeCompare(key(b),lang());});
+    $('count').textContent = 'Знайдено: ' + res.length + ' з ' + D.length;
+    if(!res.length){ $('list').innerHTML = '<div class="empty">Нічого не знайдено. Спробуйте інше слово або скиньте фільтри.</div>'; return; }
+    $('list').innerHTML = res.map(function(e){
+      var ab = e.ab ? ' <span class="ab">('+hl(e.ab)+')</span>' : '';
+      var n = ('00'+e.id).slice(-3);
+      return '<article class="t"><div class="stub"><span>№</span><b>'+n+'</b></div><div class="body">'
+        + '<h3 class="en">'+hl(e.en)+ab+'</h3>'
+        + '<p class="ua">'+hl(e.ua)+'</p>'
+        + '<p class="meta">'+esc(e.pos)+' · '+esc(e.cat)+'</p>'
+        + '<p class="def">'+hl(e.def)+'</p>'
+        + (e.ctx ? '<p class="ctx">'+esc(e.ctx)+'</p>' : '')
+        + (e.syn ? '<p class="more"><b>Синоніми:</b> '+hl(e.syn)+'</p>' : '')
+        + (e.dnu ? '<p class="more dnu"><b>Не рекомендовано:</b> '+esc(e.dnu)+'</p>' : '')
+        + '</div></article>';
+    }).join('');
+  }
+  $('q').addEventListener('input',function(){st.q=this.value;render();});
+  $('cat').addEventListener('change',function(){st.cat=this.value;render();});
+  $('az').addEventListener('click',function(ev){
+    var b = ev.target.closest('button[data-l]'); if(!b||b.disabled) return;
+    st.letter = (st.letter===b.dataset.l) ? '' : b.dataset.l; render();
+  });
+  $('mode').addEventListener('click',function(){
+    st.ua = !st.ua; st.letter = '';
+    this.setAttribute('aria-pressed',st.ua); this.textContent = 'Алфавіт: ' + (st.ua?'UA':'EN'); render();
+  });
+  $('reset').addEventListener('click',function(){
+    st.q=''; st.cat=''; st.letter=''; $('q').value=''; $('cat').value=''; render();
+  });
+  $('aboutBtn').addEventListener('click',function(){
+    var h = $('about').hidden; $('about').hidden = !h; this.setAttribute('aria-expanded',h);
+  });
+  render();
+})();
+</script>
+</body>
+</html>
